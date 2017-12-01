@@ -1,4 +1,4 @@
-<img src="assets/creative/logo.png" width="160">
+<img src="assets/creative/js-logo.png" width="160">
 
 # JS Tweets
 
