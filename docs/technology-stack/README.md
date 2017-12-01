@@ -1,5 +1,17 @@
-# Setup
+# Technology Stack
 
-There are two ways to run the app:
- - [Manually run both API and Web servers separately](WithoutDocker.md)
- - [Run together Docker (recommended)](WithDocker.md)
+### API Server
+ - Hapi
+ - Babel
+ - Twitter API
+
+### Web Server
+ - React
+ - Redux
+ - React Toolbox
+ - PostCss / cssnext
+ - Webpack
+ - Universal Rendering
+ - etc, etc
+
+...and GitBook :party:
