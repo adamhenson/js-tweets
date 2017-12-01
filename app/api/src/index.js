@@ -1,27 +1,34 @@
-import bodyParser from 'body-parser';
-import cors from 'cors';
-import express from 'express';
+import Hapi from 'hapi';
 import * as configs from './config';
 import logger from './logger';
+import { Tweets } from './routes';
 
-let app = express();
 const env = process.env.NODE_ENV || 'development';
 const config = configs[env];
 const port = config.API_PORT || '8080';
-const { configureRoutes } = configs;
+const loggerNamespace = 'index';
 
-// middleware
-app.use(cors({
-  origin: [
-    'http://localhost:3000',
-  ],
-  optionsSuccessStatus: 200,
-}));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+const server = Hapi.server({ port });
 
 // routes
-app = configureRoutes(app, config);
+const tweets = new Tweets({ config });
 
-app.listen(port);
-logger.info(`app is running on ${port}`);
+// example: /api/tweets/getRecentTweets/_ericelliott,LeaVerou
+server.route({
+  method: 'GET',
+  path: '/api/tweets/getRecentTweets/{screenNames}',
+  handler: tweets.getRecentTweets,
+});
+
+(async function start() {
+  try {
+    await server.start();
+  } catch (error) {
+    logger.info({ loggerNamespace, error });
+
+    // @TODO gracefully handle errors (restart?)
+    process.exit(1);
+  }
+
+  logger.info(`app is running on ${port}`);
+}());

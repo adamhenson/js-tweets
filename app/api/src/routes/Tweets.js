@@ -1,6 +1,5 @@
 import Twitter from 'twitter';
 import { getCombinedArrays, getFilteredTweetData, getSortedData } from '../helpers/utilities';
-import { respond } from '../helpers/route';
 
 const USER_TIMELINE_KEY = 'statuses/user_timeline';
 const USER_TIMELINE_COUNT = 10;
@@ -10,8 +9,8 @@ export default class Tweets {
     this.client = new Twitter(config.twitter);
   }
 
-  // reads comma-separated `screenName` params and responds with data or an error.
-  getRecentTweets = async (req, res) => {
+  // reads comma-separated `screenName` params and returns resulting data.
+  getRecentTweets = async (req) => {
     try {
       const { screenNames } = req.params;
       const screenNamesArray = screenNames.split(',');
@@ -25,21 +24,19 @@ export default class Tweets {
       const filteredData = getFilteredTweetData(combinedData);
       const sortedData = getSortedData(filteredData);
 
-      return respond({
-        res,
+      return {
         status: 200,
         data: sortedData,
-      });
+      };
     } catch (error) {
-      return respond({
-        res,
+      return {
         status: 500,
         error,
-      });
+      };
     }
   }
 
-  // returns a promise from the twitter client to get tweets by `screen_name`
+  // returns a promise from the twitter client to get tweets by `screen_name`.
   getUserTimeline = screen_name => this.client.get(USER_TIMELINE_KEY, {
     screen_name,
     count: USER_TIMELINE_COUNT,
