@@ -7,8 +7,6 @@ import logger from './logger';
 let app = express();
 const env = process.env.NODE_ENV || 'development';
 const config = configs[env];
-const domain = config.API_DOMAIN || 'localhost';
-const loggerNamespace = 'index';
 const port = config.API_PORT || '8080';
 const { configureRoutes } = configs;
 
@@ -23,7 +21,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // routes
-app = configureRoutes(app);
+app = configureRoutes(app, config);
 
 app.listen(port);
 logger.info(`app is running on ${port}`);

@@ -3,10 +3,11 @@ import logger from '../logger';
 
 const loggerNamespace = 'config/route';
 
-export default (app) => {
-  const tweets = new Tweets();
+export default (app, config) => {
+  const tweets = new Tweets({ config });
 
-  app.get('/api/tweets/getUserTimeline/:screen_name', tweets.getUserTimeline);
+  // `/api/tweets/getRecentTweets/_ericelliott,LeaVerou`
+  app.get('/api/tweets/getRecentTweets/:screenNames', tweets.getRecentTweets);
 
   // error handling
   app.use((error, req, res, next) => {
