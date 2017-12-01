@@ -20,7 +20,10 @@ export default function render(req, res) {
 
   // `blacklist` to omit client-side only persisted reducers.
   persistStore(store, {
-    blacklist: ['message'],
+    blacklist: [
+      'message',
+      'tweets',
+    ],
     storage: new CookieStorage({ cookies }),
   });
 

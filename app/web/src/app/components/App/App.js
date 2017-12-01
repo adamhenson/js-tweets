@@ -14,9 +14,9 @@ class App extends Component {
     return (
       <div>
         <Switch>
-          <Route exact path="/" component={Tweets} />
+          <Route exact path="/" component={ () => <Tweets {...props} /> } />
           {/* error routes */}
-          <Route component={NotFound} />
+          <Route component={ NotFound } />
         </Switch>
       </div>
     );

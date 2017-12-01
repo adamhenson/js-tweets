@@ -32,10 +32,10 @@ const tweetFetch = async (screenNames) => {
   return tweets.json();
 };
 
-export const getTweets = () => (async (dispatch, getState) => {
+export const getTweets = screenNames => (async (dispatch, getState) => {
   try {
     dispatch(requestTweetData());
-    const tweets = await tweetFetch('_ericelliott,LeaVerou');
+    const tweets = await tweetFetch(screenNames);
     return dispatch(receiveUserData(tweets));
   } catch (error) {
     return dispatch(updateMessageAndClose({

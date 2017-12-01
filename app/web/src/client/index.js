@@ -14,6 +14,7 @@ const store = configureStore(window.__PRELOADED_STATE__);
 persistStore(store, {
   blacklist: [
     'message',
+    'tweets',
   ],
   storage: new CookieStorage(),
 });

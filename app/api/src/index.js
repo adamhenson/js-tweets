@@ -8,7 +8,7 @@ const config = configs[env];
 const port = config.API_PORT || '8080';
 const loggerNamespace = 'index';
 
-const server = Hapi.server({ port });
+const server = Hapi.server({ port, routes: { cors: true } });
 
 // routes
 const tweets = new Tweets({ config });
