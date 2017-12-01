@@ -1,0 +1,42 @@
+@import "../media.css";
+
+:root {
+  --item-padding: 14px;
+}
+
+.appBar {
+  box-shadow: none !important;
+  background: #fff;
+  padding: 0 1em;
+
+  & h1 {
+    color: #fff;
+    line-height: 40px;
+    margin: 0 0 0 50px;
+    @media print {
+      color: var(--color-primary);
+    }
+  }
+
+  @media (--small-viewport) {
+    padding: 0 0.5em;
+  }
+}
+
+.item {
+  display: inline;
+  padding: var(--item-padding);
+
+  & a {
+    color: var(--color-primary-dark);
+  }
+}
+
+.iconItem {
+  padding: var(--item-padding) 0 var(--item-padding);
+}
+
+.iconMenuIcon {
+  margin-top: -calc(var(--item-padding) / 2);
+  color: var(--color-primary-dark);
+}

@@ -1,6 +1,5 @@
 import fetch from 'isomorphic-fetch';
 import { updateMessageAndClose } from './message';
-import { getHTTPResponse } from '../utils';
 
 export const TWEET_IS_FETCHING = 'TWEET_IS_FETCHING';
 export const TWEET_REQUEST_USER_DATA = 'TWEET_REQUEST_USER_DATA';
