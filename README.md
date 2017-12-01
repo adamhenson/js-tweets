@@ -2,4 +2,4 @@
 
 # JS Tweets
 
-Coming soon...
+Documentation on [GitBook](https://adamhenson.github.io/js-tweets/).
