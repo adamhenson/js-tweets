@@ -8,8 +8,7 @@ const TweetList = ({
   caption,
   children,
 }) => (
-  <RTList selectable ripple>
-    <RTListSubHeader caption={caption} />
+  <RTList selectable ripple className={style.list}>
     { children }
   </RTList>
 );
