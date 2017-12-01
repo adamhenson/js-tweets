@@ -14,4 +14,4 @@
  - Universal Rendering
  - etc, etc
 
-...and GitBook :party:
+...and GitBook!
