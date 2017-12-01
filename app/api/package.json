@@ -18,16 +18,12 @@
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.6.1",
     "babel-register": "^6.4.3",
-    "chai": "^3.2.0",
     "eslint": "^4.10.0",
     "eslint-config-airbnb": "^13.0.0",
     "eslint-plugin-class-property": "^1.0.3",
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^2.2.3",
-    "eslint-plugin-react": "^6.10.0",
-    "eslint-plugin-mocha": "^4.8.0",
-    "mocha": "^2.2.5",
-    "sinon": "^1.15.4"
+    "eslint-plugin-react": "^6.10.0"
   },
   "author": "Adam Henson <adamhenson1979@gmail.com> (https://github.com/adamhenson)",
   "dependencies": {
