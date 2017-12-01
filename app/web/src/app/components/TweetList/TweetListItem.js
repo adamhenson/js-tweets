@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { ListItem as RTListItem } from 'react-toolbox/lib/list';
-import classnames from 'classnames';
 import style from './TweetList.css';
 
 const TweetListItem = ({
@@ -14,7 +13,7 @@ const TweetListItem = ({
     className={style.item}
     avatar={avatar}
     caption={caption}
-    onClick={()=> window.open(url, '_blank')}
+    onClick={() => window.open(url, '_blank')}
     legend={legend}
   />
 );

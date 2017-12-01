@@ -10,8 +10,6 @@ import App from '../../app/containers/App';
 import configureStore from '../../app/store/configureStore';
 import { cookieReduxState } from '../../app/utils';
 
-const isProduction = process.env.NODE_ENV === 'production';
-
 export default function render(req, res) {
   const context = {};
   const cookies = req.cookies || {};
@@ -39,7 +37,6 @@ export default function render(req, res) {
     return res.redirect(302, context.url);
   }
 
-  //const head = Helmet.rewind();
   const helmet = Helmet.renderStatic();
   const preloadedState = JSON.stringify(store.getState());
 

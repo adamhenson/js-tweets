@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classnames from 'classnames';
 import RTAppBar from 'react-toolbox/lib/app_bar';
 import Logo from '../Logo';
 import style from './Navigation.css';

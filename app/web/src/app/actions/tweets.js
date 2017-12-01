@@ -26,7 +26,7 @@ const tweetFetch = async (screenNames) => {
   return tweets.json();
 };
 
-export const getTweets = screenNames => (async (dispatch, getState) => {
+export const getTweets = screenNames => (async (dispatch) => {
   try {
     dispatch(requestTweetData());
     const tweets = await tweetFetch(screenNames);

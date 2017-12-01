@@ -11,7 +11,7 @@ const Top = ({
   message,
 }) => (
   <div>
-    <Navigation/>
+    <Navigation />
     { message.isActive && message.body &&
       <Alert
         message={message.body}

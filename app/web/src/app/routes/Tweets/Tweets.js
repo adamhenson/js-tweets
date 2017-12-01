@@ -1,21 +1,31 @@
 import React, { Component } from 'react';
-import get from 'lodash.get';
 import PropTypes from 'prop-types';
+import get from 'lodash.get';
 import Helmet from '../../components/Helmet';
 import { screenNames } from '../../twitterUsers.json';
 import { TweetList, TweetListItem } from '../../components/TweetList';
 import { IconMenu, IconMenuItem } from '../../components/IconMenu';
 import { Top } from '../../components/App';
 import {
-  CONTENT_TWEET_INTRO,
   CONTENT_TWEET_RECENT_TWEETS,
   CONTENT_TWEET_TITLE,
+  CONTENT_TWEET_VIEW_ALL,
 } from '../../content';
 
 // a string representation of all Twitter screen names to fetch.
 const screenNamesString = screenNames.join();
 
 export default class Tweets extends Component {
+  static propTypes = {
+    getTweets: PropTypes.func.isRequired,
+    tweets: PropTypes.object.isRequired,
+    message: PropTypes.object,
+  };
+
+  static defaultProps = {
+    message: {},
+  };
+
   async componentDidMount() {
     const {
       getTweets,
@@ -53,8 +63,8 @@ export default class Tweets extends Component {
             key="all"
             icon="refresh"
             onClick={() => (getTweets(screenNamesString))}
-            value="View All"
-            caption="View All"
+            value={CONTENT_TWEET_VIEW_ALL}
+            caption={CONTENT_TWEET_VIEW_ALL}
           />
           { screenNames.map(screenName => (
             <IconMenuItem
