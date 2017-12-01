@@ -24,7 +24,6 @@ const Top = ({
 
 Top.propTypes = {
   tweets: PropTypes.shape({
-    isFetching: PropTypes.bool,
     recentTweets: PropTypes.object,
   }),
   message: PropTypes.shape({
@@ -36,7 +35,6 @@ Top.propTypes = {
 
 Top.defaultProps = {
   tweets: {
-    isFetching: false,
     user: null,
   },
   message: {

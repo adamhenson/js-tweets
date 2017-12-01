@@ -1,11 +1,10 @@
 import {
-  TWEET_IS_FETCHING,
   TWEET_REQUEST_USER_DATA,
   TWEET_RECEIVE_USER_DATA,
 } from '../../actions/tweets';
 
 const defaultState = {
-  isFetching: false,
+  hasAttemptedFetch: false,
   recentTweets: null,
 };
 
@@ -14,14 +13,10 @@ const tweets = (
   action,
 ) => {
   switch (action.type) {
-    case TWEET_IS_FETCHING:
-      return {
-        ...state,
-        isFetching: action.payload,
-      };
     case TWEET_REQUEST_USER_DATA:
       return {
         ...state,
+        hasAttemptedFetch: true,
       };
     case TWEET_RECEIVE_USER_DATA:
       return {

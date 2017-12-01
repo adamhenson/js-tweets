@@ -1,7 +1,6 @@
 import fetch from 'isomorphic-fetch';
 import { updateMessageAndClose } from './message';
 
-export const TWEET_IS_FETCHING = 'TWEET_IS_FETCHING';
 export const TWEET_REQUEST_USER_DATA = 'TWEET_REQUEST_USER_DATA';
 export const TWEET_RECEIVE_USER_DATA = 'TWEET_RECEIVE_USER_DATA';
 
@@ -10,11 +9,6 @@ const API_PATH_GET_RECENT_TWEETS = `${API_PATH}/getRecentTweets`;
 
 // Synchronous Action Creators
 // http://redux.js.org/docs/advanced/AsyncActions.html#synchronous-action-creators
-export const isFetching = payload => ({
-  type: TWEET_IS_FETCHING,
-  payload,
-});
-
 const requestTweetData = () => ({
   type: TWEET_REQUEST_USER_DATA,
 });
