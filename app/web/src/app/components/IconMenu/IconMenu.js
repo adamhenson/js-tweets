@@ -8,8 +8,9 @@ const IconMenu = ({
   children,
 }) => (
   <RTIconMenu
+    className={style.iconMenu}
     icon="more_horiz"
-    position="topLeft"
+    position="topRight"
     menuRipple
   >
     { children }

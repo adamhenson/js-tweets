@@ -2,27 +2,16 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import RTAppBar from 'react-toolbox/lib/app_bar';
-import RTNavigation from 'react-toolbox/lib/navigation';
 import Logo from '../Logo';
-import Link from '../Link';
 import style from './Navigation.css';
+import { CONTENT_TWEET_TITLE } from '../../content';
 
 const Navigation = () => (
   <RTAppBar
     className={style.appBar}
-    title="JS Tweets"
+    title={CONTENT_TWEET_TITLE}
   >
     <Logo />
-    <RTNavigation type="horizontal">
-      <li className={style.item}>
-        <Link
-          isNavLink
-          to="/"
-        >
-          Home
-        </Link>
-      </li>
-    </RTNavigation>
   </RTAppBar>
 );
 
