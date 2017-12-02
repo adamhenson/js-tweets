@@ -27,6 +27,7 @@ services:
     image: nginx:1.11.12
     depends_on:
       - api
+      - web
     ports:
       - "80:80"
     volumes:
