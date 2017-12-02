@@ -1,9 +1,10 @@
-# Mission
+# Running With Docker
 
-The mission of Foo is to help alleviate organizations from "tech debt" and pave a better future by providing solutions that focus in specific areas of improvement needed to bridge common pitfalls of modern practice in software delivery.
+To run with Docker, you will need Docker Compose.
 
-### Globalization
+### Steps
 
-A fundamental piece of Foo's mission is to establish a widespread adoption. Internationalization and localization will be a part of every step of growth.
+- `$ docker-compose build`
+- `$ docker-compose up`
 
-*Read the [business plan](../business-plan/README.md).*
+Navigate to `http://localhost`.

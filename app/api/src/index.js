@@ -5,7 +5,7 @@ import { Tweets } from './routes';
 
 const env = process.env.NODE_ENV || 'development';
 const config = configs[env];
-const port = config.API_PORT || '8080';
+const port = process.env.API_PORT || '8080';
 const loggerNamespace = 'index';
 
 const server = Hapi.server({ port, routes: { cors: true } });

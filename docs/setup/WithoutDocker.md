@@ -11,3 +11,5 @@ To run without Docker, you will need Node.js `8.8.1`^ and and `nodemon`.
 #### Start the Web Server
 - `$ cd app/web && npm install`
 - `$ npm run dev`
+
+Navigate to `http://localhost:3000`.

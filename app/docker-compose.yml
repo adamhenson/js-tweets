@@ -1,0 +1,33 @@
+version: '3'
+
+services:
+  api:
+    build: ./api
+    command: npm run dev
+    env_file: .env
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./api:/usr/src/app
+      - /usr/src/app/node_modules
+
+  web:
+    build: ./web
+    command: npm run dev
+    depends_on:
+      - api
+    env_file: .env
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./web:/usr/src/app
+      - /usr/src/app/node_modules
+
+  nginx:
+    image: nginx:1.11.12
+    depends_on:
+      - api
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx/etc/nginx:/etc/nginx
