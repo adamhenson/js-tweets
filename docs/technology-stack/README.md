@@ -1,7 +1,7 @@
 # Technology Stack
 
 - Docker / Docker Compose
-- GithBook
+- GitBook
 
 ### API Server
  - Hapi
