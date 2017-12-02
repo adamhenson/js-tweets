@@ -1,6 +1,6 @@
 # Running Without Docker
 
-To run without Docker, you will need Node.js `^8.8.1` and [`nodemon`].
+To run without Docker, you will need Node.js `^8.8.1` and [`nodemon`](https://www.npmjs.com/package/nodemon).
 
 ### Steps
 
