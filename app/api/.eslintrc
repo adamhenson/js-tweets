@@ -1,0 +1,11 @@
+{
+  "parser": "babel-eslint",
+  "extends": "airbnb",
+  "env": {
+    "browser": true
+  },
+  "rules": {
+    "camelcase": "off",
+    "import/prefer-default-export": "off"
+  }
+}

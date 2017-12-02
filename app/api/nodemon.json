@@ -1,0 +1,13 @@
+{
+  "exec": "babel-node",
+  "ignore": [
+    ".git",
+    "build/",
+    "node_modules/**/node_modules"
+  ],
+  "verbose": true,
+  "watch": [
+    "src/"
+  ],
+  "ext": "css js json"
+}

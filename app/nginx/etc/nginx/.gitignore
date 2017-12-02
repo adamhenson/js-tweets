@@ -1,0 +1,9 @@
+# Ignore everything
+*
+
+# But not these...
+!.gitignore
+!mime.types
+!nginx.conf
+!sites-enabled
+!sites-enabled/*
