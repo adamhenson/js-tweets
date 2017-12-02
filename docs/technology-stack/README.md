@@ -1,5 +1,8 @@
 # Technology Stack
 
+- Docker / Docker Compose
+- GithBook
+
 ### API Server
  - Hapi
  - Babel
@@ -13,5 +16,3 @@
  - Webpack
  - Universal Rendering
  - etc, etc
-
-...and GitBook!
