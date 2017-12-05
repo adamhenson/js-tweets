@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render a router nav link 1`] = `
+<NavLink
+  activeClassName="activeLink"
+  className="link"
+  exact={true}
+  onClick={null}
+  to="http://www.google.com"
+>
+  foo bar
+</NavLink>
+`;
